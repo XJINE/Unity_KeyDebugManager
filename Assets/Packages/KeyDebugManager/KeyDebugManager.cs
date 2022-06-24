@@ -21,12 +21,12 @@ public class KeyDebugManager : SingletonMonoBehaviour<KeyDebugManager>
 
     protected virtual void Start()
     {
-        this.KeyDebugInfos = new ReadOnlyCollection<KeyDebugInfo>(this.keyDebugInfos);
+        KeyDebugInfos = new ReadOnlyCollection<KeyDebugInfo>(keyDebugInfos);
     }
 
     protected virtual void Update()
     {
-        foreach (var keyDebugInfo in this.keyDebugInfos)
+        foreach (var keyDebugInfo in keyDebugInfos)
         {
             if (Input.GetKeyDown(keyDebugInfo.key))
             {

@@ -1,21 +1,25 @@
 # Unity_KeyDebugManager
 
-<img src="https://github.com/XJINE/Unity_KeyDebugManager/blob/master/Screenshot.png" width="100%" height="auto" />
+<img src="https://github.com/XJINE/Unity_KeyDebugManager/blob/main/Screenshot.png" width="100%" height="auto" />
 
 KeyDebugManager provies key based debug system.
 It just keeps some key-function pairs, and do the function when its input.
 
-## Import to Your Project
+## Importing
 
-You can import this asset from UnityPackage.
+You can use Package Manager or import it directly.
 
-- [KeyDebugManager.unitypackage](https://github.com/XJINE/Unity_KeyDebugManager/blob/master/KeyDebugManager.unitypackage)
+```
+https://github.com/XJINE/Unity_KeyDebugManager.git?path=Assets/Packages/KeyDebugManager
+```
+
+NOTE: Because of the limitation of UnityPackageManager, it needs to install dependencies manually.
 
 ### Dependencies
 
-You have to import following assets to use this asset.
+This project use following resources.
 
-- [Unity_SingletonMonoBehaviour](https://github.com/XJINE/Unity_SingletonMonoBehaviour)
+- https://github.com/XJINE/Unity_SingletonMonoBehaviour
 
 ## How to Use
 
