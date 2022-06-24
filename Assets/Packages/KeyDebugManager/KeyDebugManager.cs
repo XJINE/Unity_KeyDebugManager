@@ -4,6 +4,9 @@ using UnityEngine.Events;
 
 public class KeyDebugManager : SingletonMonoBehaviour<KeyDebugManager>
 {
+    // NOTE:
+    // If set KeyCode.None, it will be called in every frame.
+
     [System.Serializable]
     public class KeyDebugInfo
     {
@@ -19,19 +22,25 @@ public class KeyDebugManager : SingletonMonoBehaviour<KeyDebugManager>
         get; protected set;
     }
 
-    protected virtual void Start()
+    protected override void Awake()
     {
+        base.Awake();
         KeyDebugInfos = new ReadOnlyCollection<KeyDebugInfo>(keyDebugInfos);
     }
 
-    protected virtual void Update()
+    private void Update()
     {
         foreach (var keyDebugInfo in keyDebugInfos)
         {
-            if (Input.GetKeyDown(keyDebugInfo.key))
+            if (Input.GetKeyDown(keyDebugInfo.key) || keyDebugInfo.key == KeyCode.None)
             {
                 keyDebugInfo.debugs.Invoke();
             }
         }
+    }
+
+    public void ApplicationQuit()
+    {
+        Application.Quit();
     }
 }
